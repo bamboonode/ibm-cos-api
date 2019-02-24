@@ -7,7 +7,7 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'maven'
 
 group = 'com.ibm.tw'
-version = '1.0.0-SNAPSHOT'
+version = '1.0.0-RELEASE'
 sourceCompatibility = '1.8'
 
 repositories {
