@@ -1,0 +1,28 @@
+plugins {
+	id 'org.springframework.boot' version '2.0.8.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.ibm.tw'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml'
+	implementation group: 'org.projectlombok', name: 'lombok'
+	implementation group: 'org.springframework', name: 'spring-aop'
+	implementation group: 'org.aspectj', name: 'aspectjweaver'
+	//implementation group: 'javax.xml.parsers', name: 'jaxp-api'
+	
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+}
