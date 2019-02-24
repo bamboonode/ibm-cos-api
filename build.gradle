@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven'
 
 group = 'com.ibm.tw'
 version = '1.0.0-SNAPSHOT'
@@ -21,7 +22,6 @@ dependencies {
 	implementation group: 'org.projectlombok', name: 'lombok'
 	implementation group: 'org.springframework', name: 'spring-aop'
 	implementation group: 'org.aspectj', name: 'aspectjweaver'
-	//implementation group: 'javax.xml.parsers', name: 'jaxp-api'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
