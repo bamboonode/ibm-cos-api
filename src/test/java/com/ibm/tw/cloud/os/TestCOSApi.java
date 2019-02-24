@@ -31,16 +31,14 @@ import com.ibm.tw.cloud.iam.IBMCloudTokenGenerator;
 import com.ibm.tw.cloud.os.domain.Bucket;
 import com.ibm.tw.cloud.os.domain.ListBucketResult;
 import com.ibm.tw.cloud.os.service.CloudObjectStorageService;
-import com.ibm.tw.cloud.os.service.UnitTestLoggingService;
-import com.ibm.tw.cloud.os.service.impl.UnitTestLoggingServiceImpl;
 @RunWith(SpringRunner.class)
 @SpringBootTest()
 @TestPropertySource(locations="classpath:test.properties")
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class TestCOSApi {
 
-	private final Logger l = LoggerFactory.getLogger(TestCOSApi.class);
-	private final UnitTestLoggingService logger = new UnitTestLoggingServiceImpl(l);
+	private final Logger logger = LoggerFactory.getLogger(TestCOSApi.class);
+	
 	@Autowired
 	@Qualifier("restTemplate")
 	CloudObjectStorageService restTemplateCOSService;
@@ -58,7 +56,6 @@ public class TestCOSApi {
 		
 		tokenGenerator.generateToken(System.getenv("IBM_S3_API_KEY"));
 		assertTrue(!tokenGenerator.getToken().isEmpty());
-		logger.setTestcase("_1_makeSureTheCOSServiceIsWired");
 		logger.info(tokenGenerator.getToken());
 		logger.info(restTemplateCOSService.info());
 		

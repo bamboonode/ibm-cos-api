@@ -31,7 +31,6 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.ibm.tw.cloud.exception.HttpResponseException;
 import com.ibm.tw.cloud.iam.IBMCloudTokenGenerator;
 import com.ibm.tw.cloud.os.domain.Bucket;
 import com.ibm.tw.cloud.os.domain.DeleteMultipleObjectsXMLRequest;
@@ -41,7 +40,7 @@ import com.ibm.tw.cloud.os.service.CloudObjectStorageService;
 
 @Component("restTemplate")
 public class RestTemplateCOSService implements CloudObjectStorageService {
-	private static final Logger logger = LoggerFactory.getLogger(LinuxCurlCOSService.class);
+	private static final Logger logger = LoggerFactory.getLogger(RestTemplateCOSService.class);
 	private static final String endpoint = System.getenv("IBM_S3_PUBLIC_ENDPOINT");
 	private static final String resourceId = System.getenv("IBM_S3_RESOURCE_ID");
 	private static final String apiKey = System.getenv("IBM_S3_API_KEY");
